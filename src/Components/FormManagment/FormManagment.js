@@ -1,6 +1,7 @@
 import { Component } from "react";
 import CostManagmentContext from "../../Contexts/CostManagmentContext"
 import "./FormManagment.css"
+import { numberToWords } from "@persian-tools/persian-tools";
 
 class FormManagment extends Component {
 
@@ -11,6 +12,7 @@ class FormManagment extends Component {
         month: "",
         year: "",
         explain: "",
+        persianValue: "صفر"
     }
 
     static contextType = CostManagmentContext;
@@ -26,7 +28,6 @@ class FormManagment extends Component {
         let yearRadio = event.target.querySelector("input[id='year']");
         let explainRadio = event.target.querySelector("input[id='explain']");
 
-        console.log(localStorage)
         if (isNaN(Number(amountRadio.value)) || Number(amountRadio.value) == 0)
             return alert("مبلغ را به درستی وارد کنید");
         else if (isNaN(Number(dayRadio.value)) || Number(dayRadio.value) == 0 || Number(dayRadio.value) > 31)
@@ -42,7 +43,6 @@ class FormManagment extends Component {
             (incomeRadio.checked ? "درآمد" : "هزینه"), explainRadio.value, key
         ];
 
-        
         this.context.addRow([key, array.join(",")])
         
     }
@@ -54,6 +54,12 @@ class FormManagment extends Component {
     setValueInput(name, event) {
         this.setState({ [name]: event.target.value })
     }
+
+    setPersian (event) {
+        let num = !isNaN(Number(event.target.value)) ? numberToWords(Number(event.target.value)) : "";
+        this.setState({ persianValue: num })
+    }
+    
 
     render() {
 
@@ -84,12 +90,14 @@ class FormManagment extends Component {
                             </div>
                             <div>
                                 <input type="text" id="amount" name="cost-manager"
-                                    value={amount} onChange={this.setValueInput.bind(this, "amount")} />
+                                    value={amount} onChange={this.setValueInput.bind(this, "amount")} 
+                                    onKeyUp={this.setPersian.bind(this)}
+                                    />
                             </div>
                         </div>
                     </div>
                     <div className="input-custom">
-                        <div className="persian-text-number">صفر</div>
+                        <div className="persian-text-number">{this.state.persianValue}</div>
                     </div>
                     <div className="date input-custom">
                         <div>

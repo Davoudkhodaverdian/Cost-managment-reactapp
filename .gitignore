@@ -24,3 +24,7 @@ yarn-error.log*
 
 # images
 /images
+
+# package
+package-lock.json
+package.json
