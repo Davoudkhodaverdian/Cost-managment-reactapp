@@ -1,0 +1,71 @@
+.container-part>.part>form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-part>.part>form>div {
+    text-align: right;
+}
+
+.input-custom>div {
+
+    margin: 6px;
+    padding: 6px;
+    border-radius: 3px;
+    text-align: right;
+}
+
+.radio>div {
+    width: calc(100% / 2);
+    border: 1px solid lightgray;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.amount>div>div>input,
+.explain>div>div>input {
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.amount>div>div>input:focus {
+    border: 1px solid rgb(255, 0, 0);
+}
+
+
+.radio>div>label,
+.radio>div>input {
+    cursor: pointer;
+}
+
+.date-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.date-input>div {
+    width: calc(100% / 3);
+}
+
+.date-input>div>input {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: calc(100% - 6px);
+    margin: 0 3px;
+    text-align: center;
+}
+
+.cost-sum {
+    color: red;
+}
+
+.income-sum {
+    color: green;
+}

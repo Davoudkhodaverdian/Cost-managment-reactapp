@@ -1,5 +1,6 @@
 import { Component } from "react";
 import CostManagmentContext from "../../Contexts/CostManagmentContext"
+import "./RowComponent.css"
 
 class RowComponent extends Component {
 
@@ -7,15 +8,15 @@ class RowComponent extends Component {
     render() {
 
         let { array, rowNumber } = this.props;
-        let cols = ["amount", "date", "costType", "explain", "key"];
+        let { cols,showDetail,removeRow } = this.context;
         let arrngedRows = ["explain", "costType", "date", "amount", "row"];
         let key = array[cols.indexOf("key")];
 
         return (
             <tr>
                 <td>
-                    <button type="button" className="btn btn-sm btn-primary show" onClick={this.context.showDetail.bind(this,key)}>نمایش</button>
-                    <button type="button" className="btn btn-sm btn-primary remove" onClick={this.context.removeRow.bind(this,key)}>حذف</button>
+                    <button type="button" className="btn btn-sm btn-primary show" onClick={showDetail.bind(this, key,true)}>نمایش</button>
+                    <button type="button" className="btn btn-sm btn-danger remove" onClick={removeRow.bind(this, key)}>حذف</button>
                 </td>
                 {
                     arrngedRows.map((element, index) => {

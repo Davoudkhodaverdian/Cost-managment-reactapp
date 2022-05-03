@@ -1,13 +1,13 @@
 import { Component } from "react";
 import RowComponent from "../RowComponent/RowComponent";
 import CostManagmentContext from "../../Contexts/CostManagmentContext"
+import "./TableComponent.css"
 
 class TableComponent extends Component {
 
     static contextType = CostManagmentContext;
 
     render() {
-
 
         let { Rows,cols } = this.context;
     

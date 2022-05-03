@@ -1,5 +1,6 @@
 import { Component } from "react";
 import CostManagmentContext from "../../Contexts/CostManagmentContext"
+import "./FormManagment.css"
 
 class FormManagment extends Component {
 

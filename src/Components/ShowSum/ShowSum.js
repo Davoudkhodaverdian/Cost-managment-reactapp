@@ -4,18 +4,16 @@ import CostManagmentContext from "../../Contexts/CostManagmentContext"
 class ShowSum extends Component {
     static contextType = CostManagmentContext;
 
- 
-
-     setIncomeSum() {
-let cols = this.context.cols;
+    setIncomeSum() {
+        let cols = this.context.cols;
         let dataIncome = this.context.Rows.filter((elem, index) => elem[cols.indexOf("costType")] == "درآمد");
         let dataamount = dataIncome.map((elem, index) => elem[cols.indexOf("amount")]);
         let sum = 0;
         dataamount.forEach((elem, index) => sum += Number(elem));
         return sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-    
-     setCostSum() {
+
+    setCostSum() {
         let cols = this.context.cols;
         let dataCost = this.context.Rows.filter((elem, index) => elem[cols.indexOf("costType")] == "هزینه");
         let dataamount = dataCost.map((elem, index) => elem[cols.indexOf("amount")]);
@@ -23,11 +21,6 @@ let cols = this.context.cols;
         dataamount.forEach((elem, index) => sum += Number(elem));
         return sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-    
-
-
-
-
 
     render() {
 

@@ -51,82 +51,6 @@ button {
     height: 40px;
 }
 
-/* form */
-
-.container-part>.part>form {
-    display: flex;
-    flex-direction: column;
-}
-
-.container-part>.part>form>div {
-    text-align: right;
-}
-
-.input-custom>div {
-
-    margin: 6px;
-    padding: 6px;
-    border-radius: 3px;
-    text-align: right;
-}
-
-.radio>div {
-    width: calc(100% / 2);
-    border: 1px solid lightgray;
-}
-
-.radio {
-    display: flex;
-    flex-direction: row;
-
-}
-
-.amount>div>div>input,
-.explain>div>div>input {
-    width: 100%;
-    border: 1px solid lightgray;
-    border-radius: 3px;
-}
-
-.amount>div>div>input:focus {
-    border: 1px solid rgb(255, 0, 0);
-}
-
-
-.radio>div>label,
-.radio>div>input {
-    cursor: pointer;
-}
-
-.date-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-}
-
-.date-input>div {
-    width: calc(100% / 3);
-}
-
-.date-input>div>input {
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    width: calc(100% - 6px);
-    margin: 0 3px;
-    text-align: center;
-}
-
-.cost-sum {
-    color: red;
-}
-
-.income-sum {
-    color: green;
-}
-
-/* form-end */
-
 /* left-part */
 .cost {
     border-right: 1px solid red;
@@ -151,35 +75,6 @@ button {
 
 
 /* table */
-
-
-.table {
-    margin: 10px;
-    box-shadow: 1px 1px 5px lightgray;
-    max-width: 820px;
-    overflow-y: auto;
-    border-radius: 2px 2px 0 0;
-    width: 100%;
-    max-width: 820px;
-    max-height: 400px;
-    text-align: center;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    background-color: white;
-
-}
-
-table[class='content-table'] thead th {
-    background-color: #e4e3ef;
-    position: sticky;
-    top: 0;
-    padding: 5px;
-    text-align: center;
-}
 
 /* table-end */
 
