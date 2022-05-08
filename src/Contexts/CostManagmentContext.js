@@ -1,6 +1,6 @@
 import React from "react";
 
-const todosContext = React.createContext({
+const ManagmentContext = React.createContext({
     Rows: [],
     cols: [],
     removeRow: () => { },
@@ -9,4 +9,4 @@ const todosContext = React.createContext({
     addRow: () => { },
 });
 
-export default todosContext;
+export default ManagmentContext;
