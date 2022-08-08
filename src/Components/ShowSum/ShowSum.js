@@ -27,7 +27,7 @@ export default function ShowSum () {
         let CostSum = setCostSum()
 
         return (
-            <div className="">
+            <div className="w-full">
                 <div className="flex justify-between">
                     <div className="m-3">
                         <div>مخارج</div>

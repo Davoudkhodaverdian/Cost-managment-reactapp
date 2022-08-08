@@ -68,7 +68,7 @@ export default function Form() {
 
     return (
         <div className="" dir="rtl">
-            <form onSubmit={validation.bind(this)}>
+            <form onSubmit={validation.bind(this)} className=''>
                 <div className="flex">
                     <div className="p-2">
                         <label htmlFor="cost" className="pl-2 cursor-pointer">هزینه</label>
@@ -91,7 +91,7 @@ export default function Form() {
                             <input type="text" id="amount" name="cost-manager"
                                 value={amount} onChange={setValueInput.bind(this, "amount")}
                                 onKeyUp={setPersian.bind(this)} placeholder="مبلغ"
-                                className="bg-white w-full border border-gray-300 rounded-md shadow pr-3 pl-10 py-2 text-right focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                className="bg-white w-full border border-gray-300 rounded-md mb-1 shadow pr-3 pl-10 py-2 text-right focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             />
                         </div>
                     </div>
@@ -103,20 +103,20 @@ export default function Form() {
                     <div className="m-1">
                         <label htmlFor="date">تاریخ</label>
                     </div>
-                    <div className="flex">
-                        <div  className="ml-1">
+                    <div className="md:flex">
+                        <div  className="md:ml-1">
                             <input type="text" id="year" name="cost-manager"
-                                className="bg-white w-full border border-gray-300 rounded-md shadow pr-3 pl-10 py-2 text-right focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                className="bg-white w-full p-2 border border-gray-300 rounded-md mb-1 shadow pl-10 py-2 text-right focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 value={year} placeholder="سال" onChange={setValueInput.bind(this, "year")} />
                         </div>
-                        <div  className="ml-1">
+                        <div  className="md:ml-1">
                             <input type="text" id="month" name="cost-manager"
-                                className="bg-white w-full border border-gray-300 rounded-md shadow pr-3 pl-10 py-2 text-right focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                className="bg-white w-full p-2 border border-gray-300 rounded-md mb-1 shadow  pl-10 py-2 text-right focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 value={month} placeholder="ماه" onChange={setValueInput.bind(this, "month")} />
                         </div>
-                        <div  className="ml-1">
+                        <div  className="md:ml-1">
                             <input type="text" id="day" name="cost-manager"
-                                className="bg-white w-full border border-gray-300 rounded-md shadow pr-3 pl-10 py-2 text-right focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                className="bg-white w-full p-2 border border-gray-300 rounded-md mb-1 shadow pl-10 py-2 text-right focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 value={day} placeholder="روز" onChange={setValueInput.bind(this, "day")} />
                         </div>
                     </div>
@@ -129,12 +129,12 @@ export default function Form() {
                         </div>
                         <div>
                             <input type="text" id="explain" name="cost-manager" placeholder="توضیحات"
-                            className="bg-white w-full border border-gray-300 rounded-md shadow pr-3 pl-10 py-2 text-right focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            className="bg-white w-full border border-gray-300 rounded-md mb-1 shadow pr-3 pl-10 py-2 text-right focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 value={explain} onChange={setValueInput.bind(this, "explain")} />
                         </div>
                     </div>
                 </div>
-                <input className="p-2 rounded text-white text-center bg-violet-500 font-bold drop-shadow hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300  mx-1 my-2"
+                <input className="p-2 rounded text-white text-center  bg-violet-500 font-bold drop-shadow hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300  mx-1 my-2"
                  type="submit" value="ثبت دخل و خرج" />
             </form>
         </div>

@@ -1,25 +1,36 @@
 
-
-import ChartComponent from "../ChartComponent/ChartComponent";
 import Form from "../Form";
-import ModalDetailComponent from "../ModalDetailComponent/ModalDetailComponent";
 import ShowSum from "../ShowSum/ShowSum";
 import TableComponent from "../TableComponent/TableComponent";
 import { useState } from "react";
 import CostManagmentContext from "../../Contexts/CostManagmentContext"
-
+import ChartComponent from './../ChartComponent/ChartComponent'
 export default function CostManagment() {
 
     let initialData = [
         {
-            amount: 180000,
+            amount: 17000,
             date: '1400/3/6',
             costType: 'income', //cost or income
-            text: "درآمد امروز",
+            text: "درآمد بففبف",
             id:1
         },
         {
-            amount: 12000,
+            amount: 1806000,
+            date: '1400/3/7',
+            costType: 'income', //cost or income
+            text: "درآمد ففف",
+            id:1
+        },
+        {
+            amount: 198000,
+            date: '1400/3/8',
+            costType: 'income', //cost or income
+            text: "درآمد غقسیقفسق",
+            id:1
+        },
+        {
+            amount: 1200000,
             date: '1400/3/6',
             costType: 'cost',
             text: "سیب زمینی",
@@ -30,6 +41,13 @@ export default function CostManagment() {
             date: '1400/3/7',
             costType: 'cost',
             text: "چیپس",
+            id:3
+        },
+        {
+            amount: 800000,
+            date: '1400/3/8',
+            costType: 'cost',
+            text: "ماست موسیر",
             id:3
         }
     ]
@@ -48,10 +66,6 @@ export default function CostManagment() {
         setState(prevState => ({...prevState, Rows: [...prevState.Rows.filter(item => (item["id"] !== id))] }));
     }
 
-    function showDetail(id, ModalState) {
-        setState(prevState => ({...prevState, ModalState: ModalState, CurrentModal: id }));
-    }
-
     let { Rows, ModalState, CurrentModalKey } = state;
 
     return (
@@ -59,32 +73,28 @@ export default function CostManagment() {
             Rows: Rows,
             ModalState: ModalState,
             removeRow: removeRow,
-            showDetail: showDetail,
             addRow: addRow,
 
         }}>
-            <div className="flex container justify-center">
-            <div className="flex flex-col ">
-                <div className="mt-3 flex justify-between">
-                    <div className="p-2 shadow rounded  m-2">
+            
+            <div className="flex flex-col items-center ">
+                <div className="mt-3 w-full md:flex justify-center">
+                    <div className="p-2 shadow rounded m-2 md:min-w-[500px]">
 
                         <ShowSum />
-                        {/* <ChartComponent /> */}
+                        <ChartComponent />
+                        
                     </div>
 
 
-                    <div className="p-2 shadow rounded m-2 ">
+                    <div className="p-2 shadow rounded m-2">
                         <Form/>
                     </div>
                 </div>
-                <div className="flex justify-center">
                     <TableComponent />
-                </div>
-                <div className="">
-                    <ModalDetailComponent Modal={CurrentModalKey} show={ModalState} />
-                </div>
+    
             </div>
-            </div>
+            
         </CostManagmentContext.Provider>
     );
 

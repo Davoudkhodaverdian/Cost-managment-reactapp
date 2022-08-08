@@ -13,7 +13,7 @@ export default function Home() {
           <div className='p-1 pl-3'></div>
         </div>
       </header>
-      <div>
+      <div className=''>
         <CostManagment />
       </div>
     </div>
